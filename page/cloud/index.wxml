@@ -1,0 +1,2 @@
+<!--page/cloud/index.wxml-->
+<button bindtap="test1">test1</button>
