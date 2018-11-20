@@ -64,11 +64,9 @@ Page({
 	},
 
 	test1: () => {
-		const db = wx.cloud.database();
-
-		db.collection('user').where({
-			id: 1
-		}).get().then(res => {
+		wx.cloud.callFunction({
+			name:'test'
+		}).then(res=>{
 			console.log(res)
 		})
 	}

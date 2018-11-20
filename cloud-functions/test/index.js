@@ -7,17 +7,13 @@ cloud.init()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
 
-  const db = wx.cloud.database();
+  const db = cloud.database();
 
   db.collection('user').where({
 	  id:1
-  }).then(res=>{
+  }).get().then(res=>{
 	  return {
-		  event,
-		  openid: wxContext.OPENID,
-		  appid: wxContext.APPID,
-		  unionid: wxContext.UNIONID,
-		  res
+		  id:1
 	  }
   })
 
